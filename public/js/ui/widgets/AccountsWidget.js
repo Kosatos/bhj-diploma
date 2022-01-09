@@ -14,7 +14,13 @@ class AccountsWidget {
    * необходимо выкинуть ошибку.
    * */
   constructor( element ) {
+    if (!element) {
+      throw new Error('Transmitted an empty element');
+    }
 
+		this.element = element;
+    this.registerEvents();
+    this.update();
   }
 
   /**
